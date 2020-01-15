@@ -13,12 +13,14 @@ reply("voice response initialized")
 
 # ready
 
-with mic as source:
+''' with mic as source:
     print("say something!")
     recog.adjust_for_ambient_noise(source)
     audio = recog.listen(source)
     text = recog.recognize_google(audio)
-    #reply(text)
-    
+    #reply(text) '''
+
+text = input()
+
 if "hello" in text:
     reply("hello")
