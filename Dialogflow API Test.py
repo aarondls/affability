@@ -2,7 +2,7 @@ import os
 import dialogflow
 from google.api_core.exceptions import InvalidArgument
 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = 'SimpleAssistantKey.json'
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = '/Users/aarondelossantos/Documents/DialogueflowKey/SimpleassistantKey.json'
 
 DIALOGFLOW_PROJECT_ID = 'simpleassistant-mwxwbe'
 DIALOGFLOW_LANGUAGE_CODE = 'en'
