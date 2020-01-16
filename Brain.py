@@ -4,14 +4,14 @@ import subprocess
 recog = speechrecog.Recognizer()
 mic = speechrecog.Microphone()
 
-print ("initialized speech recognition")
+# print ("initialized speech recognition")
 
 def reply(response):
     subprocess.call(['say', response])
 
-reply("voice response initialized")
+# reply("voice response initialized")
 
-# ready
+print("ready")
 
 ''' with mic as source:
     print("say something!")
@@ -23,4 +23,4 @@ reply("voice response initialized")
 text = input()
 
 if "hello" in text:
-    reply("hello")
+    print("hello")
