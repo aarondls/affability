@@ -2,6 +2,7 @@ import os
 import dialogflow_v2 as dialogflow
 from dialogflow_v2.types import TextInput, QueryInput
 from google.api_core.exceptions import InvalidArgument
+from google.protobuf.json_format import MessageToDict
 
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = '/Users/aarondelossantos/Documents/DialogueflowKey/SimpleassistantKey.json'
 
@@ -33,13 +34,13 @@ def askBotResponse(text):
         text_input = dialogflow.types.TextInput(text=text, language_code=DIALOGFLOW_LANGUAGE_CODE)
         query_input = dialogflow.types.QueryInput(text=text_input)
         response = session_client.detect_intent(session=session, query_input=query_input)
-        global detectedIntent, confidence, reply, action, requiredParametersPresent
+        global detectedIntent, confidence, reply, action, requiredParamsPresent, replyParams
         detectedIntent = response.query_result.intent.display_name
         confidence = response.query_result.intent_detection_confidence
         reply = response.query_result.fulfillment_text
         action = response.query_result.action
-        requiredParametersPresent = response.query_result.all_required_params_present
-        print(response.query_result.parameters-time)
+        requiredParamsPresent = response.query_result.all_required_params_present
+        replyParams = MessageToDict(response.query_result.parameters)
     except InvalidArgument:
         return("Unable to process")
 

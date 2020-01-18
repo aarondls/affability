@@ -19,7 +19,8 @@ if __name__ == '__main__':
     print("ready")
     text = input()
     DialogflowAPITest.askBotResponse(text)
-    ''' print(DialogflowAPITest.reply)
+    print(DialogflowAPITest.reply)
     print(DialogflowAPITest.detectedIntent)
     print(DialogflowAPITest.confidence)
-    print(DialogflowAPITest.requiredParametersPresent)'''
+    print(DialogflowAPITest.requiredParamsPresent)
+    print(DialogflowAPITest.replyParams)
