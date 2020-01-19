@@ -10,5 +10,6 @@ Runs predefined functions based on Dialogflow's detected intent.
 
 ## Dependencies
 ```
+pip install SpeechRecognition
 pip install dialogflow
 ```
