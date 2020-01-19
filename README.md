@@ -13,3 +13,6 @@ Runs predefined functions based on Dialogflow's detected intent.
 pip install SpeechRecognition
 pip install dialogflow
 ```
+
+## Usage
+Run Brain.py
