@@ -6,6 +6,7 @@ from dialogflow_v2.types import TextInput, QueryInput
 from google.api_core.exceptions import InvalidArgument
 from google.protobuf.json_format import MessageToDict
 
+# file path for DialogFlow json key
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = '/Users/aarondelossantos/Documents/DialogueflowKey/SimpleassistantKey.json'
 
 DIALOGFLOW_PROJECT_ID = 'simpleassistant-mwxwbe'
