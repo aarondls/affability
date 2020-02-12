@@ -21,6 +21,7 @@ mic = speechrecog.Microphone()
 def reply(response):
     subprocess.call(['say', response])
 
+# to use speech recognition, uncomment the following
 ''' with mic as source:
     print("say something!")
     recog.adjust_for_ambient_noise(source)
@@ -28,10 +29,15 @@ def reply(response):
     text = recog.recognize_google(audio)
     reply("Wait a second") '''
 
+#define functions
 def alarm():
     # detected intent is alarm and perform necessary tasks here
     print("alarm function called")
-
+    # To find the parameters, first check if it exists then take it from the replyParam dictionary like so:
+    if "time" in replyParams:
+        print(replyParams["time"])
+        
+#list all function names after defining it
 functions = {
     "Alarm": alarm
 }
@@ -61,7 +67,7 @@ def understand(text):
         print("required parameters present")
         return detectedIntent
 
-# Calls the understand function
+# Calls the function that matches detected intent
 if __name__ == '__main__':
     print("ready")
     keepGoing = True
@@ -73,6 +79,3 @@ if __name__ == '__main__':
         else: 
             if understand(text) in functions:
                 functions[detectedIntent]()
-            # To find the parameters, first check if it exists then take it from the replyParam dictionary like so:
-            if "time" in replyParams:
-                print(replyParams["time"])
