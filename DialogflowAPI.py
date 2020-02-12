@@ -10,8 +10,6 @@ DIALOGFLOW_PROJECT_ID = 'simpleassistant-mwxwbe'
 DIALOGFLOW_LANGUAGE_CODE = 'en-US'
 SESSION_ID = 'me'
 
-text_to_be_analyzed = "testing"
-
 session_client = dialogflow.SessionsClient()
 session = session_client.session_path(DIALOGFLOW_PROJECT_ID, SESSION_ID)
 
