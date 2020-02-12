@@ -29,9 +29,6 @@ def understand(text):
     print(DialogflowAPI.detectedIntent)
     print(DialogflowAPI.confidence)
     print(DialogflowAPI.requiredParamsPresent)
-    if "time" in DialogflowAPI.replyParams:
-        print(DialogflowAPI.replyParams["time"])
-    # reply(DialogflowAPI.reply)
     if DialogflowAPI.requiredParamsPresent == True:
         #All parameters needed to process request is present
         print("required parameters present")
@@ -49,5 +46,6 @@ if __name__ == '__main__':
         else: 
             if understand(text) in functions:
                 functions[DialogflowAPI.detectedIntent]()
+            # To find the parameters, first check if it exists then take it from the replyParam dictionary like so:
             if "time" in DialogflowAPI.replyParams:
-            print(DialogflowAPI.replyParams["time"])
+                print(DialogflowAPI.replyParams["time"])
