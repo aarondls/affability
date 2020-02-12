@@ -1,6 +1,6 @@
 import speech_recognition as speechrecog
 import subprocess
-import DialogflowAPITest 
+import DialogflowAPI 
 
 recog = speechrecog.Recognizer()
 mic = speechrecog.Microphone()
@@ -23,26 +23,31 @@ functions = {
     "Alarm": alarm
 }
 
-keepGoing = True
+def understand(text):
+    DialogflowAPI.askBotResponse(text)
+    print(DialogflowAPI.reply)
+    print(DialogflowAPI.detectedIntent)
+    print(DialogflowAPI.confidence)
+    print(DialogflowAPI.requiredParamsPresent)
+    if "time" in DialogflowAPI.replyParams:
+        print(DialogflowAPI.replyParams["time"])
+    # reply(DialogflowAPI.reply)
+    if DialogflowAPI.requiredParamsPresent == True:
+        #All parameters needed to process request is present
+        print("required parameters present")
+        return DialogflowAPI.detectedIntent
 
+# Calls the understand function
 if __name__ == '__main__':
     print("ready")
+    keepGoing = True
     while keepGoing == True:
         text = input()
         if text == "End":
             keepGoing = False
             break
-        else:
-            DialogflowAPITest.askBotResponse(text)
-            print(DialogflowAPITest.reply)
-            print(DialogflowAPITest.detectedIntent)
-            print(DialogflowAPITest.confidence)
-            print(DialogflowAPITest.requiredParamsPresent)
-            if "time" in DialogflowAPITest.replyParams:
-                print(DialogflowAPITest.replyParams["time"])
-            # reply(DialogflowAPITest.reply)
-            if DialogflowAPITest.requiredParamsPresent == True:
-                #All parameters needed to process request is present
-                print("required parameters present")
-                if DialogflowAPITest.detectedIntent in functions:
-                    functions[DialogflowAPITest.detectedIntent]()
+        else: 
+            if understand(text) in functions:
+                functions[DialogflowAPI.detectedIntent]()
+            if "time" in DialogflowAPI.replyParams:
+            print(DialogflowAPI.replyParams["time"])
