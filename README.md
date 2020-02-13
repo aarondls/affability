@@ -6,6 +6,11 @@ Simple Assistant allows for an easy utilization of Google's DialogFlow for natur
 This can be utilized to understand commands and then perform the relevant tasks based from the detected intent. Ultimately designed to have the ability to assist with a quadruped robot project.
 
 ## Dependencies
+Installing using the requirements.txt file:
+```
+pip install -r requirements.txt
+```
+Installing manually:
 ```
 pip install SpeechRecognition
 pip install dialogflow
@@ -22,9 +27,18 @@ The understand function contains 5 parameters: text, credentials, projectID, lan
 understand('textToBeAnalyzed', 'filepath', 'projectIDname', 'en-US', 'me') 
 ```
 
-The understand function returns the results as an organizer class. This class contains detectedIntent, confidence, reply, action, requiredParamsPresent, and replyParams.
+The understand function returns the results as an organizer class. This class contains detectedIntent, confidence, reply, action, requiredParamsPresent, and replyParams. 
 
-![alt text](https://github.com/aarondls/Simple-Assistant-/blob/master/Images/OrganizerClass.png)
+```python
+class organizer:
+    def __init__(self, detectedIntent, confidence, reply, action, requiredParamsPresent, replyParams):
+        self.detectedIntent = detectedIntent
+        self.confidence = confidence
+        self.reply = reply
+        self.action = action
+        self.requiredParamsPresent = requiredParamsPresent
+        self.replyParams = replyParams
+```
 
 For example, to extract and print detected intent:
 
