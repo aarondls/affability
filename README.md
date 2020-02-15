@@ -1,5 +1,5 @@
 # Affability
-Affability allows for an easy utilization of Google's DialogFlow for natural language understanding. It allows for calling a single function and returning the result from Dialogflow as a class containing all the pertinent data such as detected intent.
+Affability allows for an easy utilization of Google's DialogFlow for natural language understanding. It allows for calling a single function and returning the result from Dialogflow as a class containing all the pertinent data such as detected intent. Communicating with Dialogflow through Affability trades-off features and customizability for simplicity and conciseness. 
 
 This can be utilized to understand commands and then perform the relevant tasks based from the detected intent. Affability is ultimately designed to have the ability to assist with a quadruped robot project in the future.
 
