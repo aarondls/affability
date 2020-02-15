@@ -38,8 +38,4 @@ def understand(text, credentials, projectID, languageCode, sessionID):
     except InvalidArgument:
         return("Unable to process")
     result = organizer(detectedIntent, confidence, reply, action, requiredParamsPresent, reply)
-    print(result.reply)
-    print(result.detectedIntent)
-    print(result.confidence)
-    print(result.requiredParamsPresent)
     return result
