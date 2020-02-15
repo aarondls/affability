@@ -1,9 +1,7 @@
-# Simple Assistant
-Simple Assistant in Python
+# Affability
+Affability allows for an easy utilization of Google's DialogFlow for natural language understanding. It allows for calling a single function and returning the result from Dialogflow as a class containing all the pertinent data such as detected intent.
 
-Simple Assistant allows for an easy utilization of Google's DialogFlow for natural language understanding. It allows for calling a single function and returning the result from Dialogflow as a class containing all the pertinent data such as detected intent.
-
-This can be utilized to understand commands and then perform the relevant tasks based from the detected intent. Simple Assistant is ultimately designed to have the ability to assist with a quadruped robot project in the future.
+This can be utilized to understand commands and then perform the relevant tasks based from the detected intent. Affability is ultimately designed to have the ability to assist with a quadruped robot project in the future.
 
 ## Dependencies
 Installing using the requirements.txt file:
