@@ -13,10 +13,12 @@ Installing manually:
 pip install SpeechRecognition
 pip install dialogflow
 ```
+## Installation 
+```
+pip install Affability
+```
 
 ## Usage
-As a standalone file, Brain.py can be run.
-
 Using the understand function:
 
 The understand function contains 5 parameters: text, credentials, projectID, languageCode, and sessionID. Text is text to be analyzed, credentials is the file path of the authentication key, projectID is the project ID, languageCode is the language, and sessionID is the session ID. All parameters are strings. 
@@ -44,3 +46,5 @@ For example, to extract and print detected intent:
 reply = understand('textToBeAnalyzed', 'filepath', 'projectIDname', 'en-US', 'me') 
 print(reply.detectedIntent)
 ```
+## Sample usage
+The example_usage.py file demonstrates the ease of communicating with Dialogflow through Affability.
