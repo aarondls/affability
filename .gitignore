@@ -2,3 +2,8 @@
 .vscode
 __pycache__/
 sa_env/
+sa_env_dev/
+requirements_dev.txt
+Affability.egg-info/
+build/
+dist/
