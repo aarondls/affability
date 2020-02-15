@@ -1,8 +1,8 @@
 import speech_recognition as speechrecog
 import subprocess
 
-# As package as not yet been built, import the file itself
-import Brain as brain
+# Import Affability
+import Affability
 
 # only for speech recognition
 ''' recog = speechrecog.Recognizer()
@@ -43,7 +43,8 @@ if __name__ == '__main__':
             keepGoing = False
             break
         else: 
-            reply = brain.understand(text, '/Users/aarondelossantos/Documents/DialogueflowKey/SimpleassistantKey.json', 'simpleassistant-mwxwbe', 'en-US', 'me') 
+            reply = Affability.understand(text, '/Users/aarondelossantos/Documents/DialogueflowKey/SimpleassistantKey.json', 'simpleassistant-mwxwbe', 'en-US', 'me') 
+            print(reply.reply)
             if reply.requiredParamsPresent == True:
                 #All parameters needed to process request is present
                 print("required parameters present")
