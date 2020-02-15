@@ -13,18 +13,24 @@ Installing manually:
 pip install SpeechRecognition
 pip install dialogflow
 ```
+
 ## Installation 
 ```
 pip install Affability
 ```
 
 ## Usage
+The module can be imported as Affability:
+```python
+import Affability
+```
+
 Using the understand function:
 
 The understand function contains 5 parameters: text, credentials, projectID, languageCode, and sessionID. Text is text to be analyzed, credentials is the file path of the authentication key, projectID is the project ID, languageCode is the language, and sessionID is the session ID. All parameters are strings. 
 
 ```python
-understand('textToBeAnalyzed', 'filepath', 'projectIDname', 'en-US', 'me') 
+Affability.understand('textToBeAnalyzed', 'filepath', 'projectIDname', 'en-US', 'me') 
 ```
 
 The understand function returns the results as an organizer class. This class contains detectedIntent, confidence, reply, action, requiredParamsPresent, and replyParams. 
@@ -43,8 +49,9 @@ class organizer:
 For example, to extract and print detected intent:
 
 ```python
-reply = understand('textToBeAnalyzed', 'filepath', 'projectIDname', 'en-US', 'me') 
+reply = Affability.understand('textToBeAnalyzed', 'filepath', 'projectIDname', 'en-US', 'me') 
 print(reply.detectedIntent)
 ```
+
 ## Sample usage
 The example_usage.py file demonstrates the ease of communicating with Dialogflow through Affability.

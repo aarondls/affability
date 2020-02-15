@@ -7,3 +7,4 @@ requirements_dev.txt
 Affability.egg-info/
 build/
 dist/
+pkg_env/
