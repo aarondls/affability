@@ -2,7 +2,7 @@ import speech_recognition as speechrecog
 import subprocess
 
 # Import Affability
-import Affability
+import affability
 
 # Only for speech recognition
 ''' recog = speechrecog.Recognizer()
@@ -44,9 +44,9 @@ if __name__ == '__main__':
         if text == "End":
             keepGoing = False
             break
-        else: 
-            # Change argument to filepath of Dialogueflow json key
-            reply = Affability.understand(text, '/Users/aarondelossantos/Documents/DialogueflowKey/SimpleassistantKey.json', 'simpleassistant-mwxwbe', 'en-US', 'me') 
+        else:
+            # Change argument to filepath of Dialogflow json key
+            reply = affability.understand(text, '/Users/aarondelossantos/Documents/DialogueflowKey/SimpleassistantKey.json', 'simpleassistant-mwxwbe', 'en-US', 'me') 
             print(reply.reply)
             if reply.requiredParamsPresent == True:
                 # All parameters needed to process request is present

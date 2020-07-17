@@ -4,7 +4,7 @@ __pycache__/
 sa_env/
 sa_env_dev/
 requirements_dev.txt
-Affability.egg-info/
+affability.egg-info/
 build/
 dist/
 pkg_env/
