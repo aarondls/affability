@@ -1,10 +1,17 @@
+# Mac and vscode files
 .DS_Store
 .vscode
+
+# Python cache
 __pycache__/
-sa_env/
-sa_env_dev/
+
+# Requirements file for dev use of installing dependencies
 requirements_dev.txt
+
+# Files generated from package creation
 affability.egg-info/
 build/
 dist/
-pkg_env/
+
+# virtual environments
+venv/
