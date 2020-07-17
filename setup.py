@@ -5,7 +5,7 @@ with open("README.md", "r") as readme_file:
 
 setuptools.setup(
     name="affability",
-    version="1.0.1",
+    version="1.0.2",
     author="Aaron de los Santos",
     author_email="hansaaron_d@yahoo.com",
     description="A simple package for interfacing with Dialogflow",
