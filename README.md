@@ -9,7 +9,7 @@ This can be utilized to understand commands and then perform the relevant tasks 
 As of v1.0.1, affability automatically installs dialogflow. Should speech recognition be needed, the SpeechRecognition pakage needs to be installed.
 
 ```python
-pip install dialogflow
+pip install SpeechRecognition
 ```
 
 ## Installation
