@@ -13,7 +13,6 @@ class organizer:
         self.requiredParamsPresent = requiredParamsPresent
         self.replyParams = replyParams
 
-
 def understand(text, credentials, projectID, languageCode, sessionID):
     os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = credentials
 
@@ -36,6 +35,6 @@ def understand(text, credentials, projectID, languageCode, sessionID):
         requiredParamsPresent = response.query_result.all_required_params_present
         replyParams = MessageToDict(response.query_result.parameters)
     except InvalidArgument:
-        return("Unable to process")
-    result = organizer(detectedIntent, confidence, reply, action, requiredParamsPresent, reply)
+        raise
+    result = organizer(detectedIntent, confidence, reply, action, requiredParamsPresent, replyParams)
     return result
