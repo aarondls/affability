@@ -1,10 +1,13 @@
-import speech_recognition as speechrecog
+# Only for speech recognition
+# import speech_recognition as speechrecog
 import subprocess
 
 # Import Affability
 import affability
 
-# Only for speech recognition
+# Import InvalidArgument exception to handle errors
+from google.api_core.exceptions import InvalidArgument
+
 ''' recog = speechrecog.Recognizer()
 mic = speechrecog.Microphone() '''
 
@@ -37,7 +40,7 @@ functions = {
 
 # Calls the function that matches detected intent using the dictionary functions
 if __name__ == '__main__':
-    print("ready")
+    print("Ready")
     keepGoing = True
     while keepGoing == True:
         text = input()
@@ -45,13 +48,17 @@ if __name__ == '__main__':
             keepGoing = False
             break
         else:
-            # Change argument to filepath of Dialogflow json key
-            reply = affability.understand(text, '/Users/aarondelossantos/Documents/DialogueflowKey/SimpleassistantKey.json', 'simpleassistant-mwxwbe', 'en-US', 'me') 
-            print(reply.reply)
-            if reply.requiredParamsPresent == True:
-                # All parameters needed to process request is present
-                print("required parameters present")
-                # This is the purpose of listing function names above
-                if reply.detectedIntent in functions:
-                    # Call the necessary function based on the reply
-                    functions[reply.detectedIntent]()
+            try:
+                # Change argument to filepath of Dialogflow json key
+                reply = affability.understand(text, '/Users/aarondelossantos/Documents/DialogueflowKey/SimpleassistantKey.json', 'simpleassistant-mwxwbe', 'en-US', 'me') 
+                print(reply.reply)
+                if reply.requiredParamsPresent == True:
+                    # All parameters needed to process request is present
+                    print("required parameters present")
+                    # This is the purpose of listing function names above
+                    if reply.detectedIntent in functions:
+                        # Call the necessary function based on the reply
+                        functions[reply.detectedIntent]()
+            except InvalidArgument:
+                # Handle invalid argument error
+                print("An error occured. Try again.")
