@@ -5,7 +5,7 @@ with open("README.md", "r") as readme_file:
 
 setuptools.setup(
     name="affability",
-    version="1.0.2",
+    version="1.0.3",
     author="Aaron de los Santos",
     author_email="hansaaron_d@yahoo.com",
     description="A simple package for interfacing with Dialogflow",
@@ -13,7 +13,7 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     url="https://github.com/aarondls/affability",
     keywords= ['Dialogflow', 'DialogFlow'],
-    packages=setuptools.find_packages(),
+    packages=setuptools.find_packages(exclude=["samples", "dev_env"]),
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
