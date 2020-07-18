@@ -12,6 +12,12 @@ As of v1.0.1, affability automatically installs dialogflow. Should speech recogn
 pip install SpeechRecognition
 ```
 
+With an invalid argument, Affability throws an InvalidArgument exception, which requires importing it from the Google API Core exceptions:
+
+```python
+from google.api_core.exceptions import InvalidArgument
+```
+
 ## Installation
 
 ```python
@@ -54,6 +60,17 @@ reply = affability.understand('textToBeAnalyzed', 'filepath', 'projectIDname', '
 print(reply.detectedIntent)
 ```
 
+Affability throws the InvalidArgument exception when DialogFlow detects invalid arguments. To handle this, it is recommended to use the understand function in a try and except block:
+
+
+```python
+try:
+    reply = affability.understand('textToBeAnalyzed', 'filepath', 'projectIDname', 'en-US', 'me')
+    # do something with reply
+except InvalidArgument:
+    # Handle invalid argument error
+```
+
 ## Sample usage
 
-The example_usage.py file demonstrates the ease of communicating with Dialogflow through Affability.
+The sample.py file demonstrates the ease of communicating with Dialogflow through Affability.
